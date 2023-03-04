@@ -22,3 +22,11 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    doctrine.orm.metadata.annotation_reader:
+        class: Doctrine\Common\Annotations\AnnotationReader
+
+    doctrine.orm.default_annotation_metadata_driver:
+        class: Doctrine\ORM\Mapping\Driver\AnnotationDriver
+        arguments:
+            - '@doctrine.orm.metadata.annotation_reader'
+            - [ '%kernel.project_dir%/src/Entity' ]

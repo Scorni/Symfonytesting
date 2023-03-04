@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SubjectController!{% endblock %}
+
+{% block body %}
+    {{ form_start(subjectForm) }}
+    {{ form_row(subjectForm.Title) }}
+    {{ form_row(subjectForm.Description) }}
+    {{ form_row(subjectForm.Author) }}
+
+    <button type="submit" class="btn">Register</button>
+    {{ form_end(subjectForm) }}
+{% endblock %}
